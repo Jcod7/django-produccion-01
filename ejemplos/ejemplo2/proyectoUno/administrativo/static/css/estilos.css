@@ -1,0 +1,175 @@
+
+/* Estilos generales para la tabla */
+th,
+td {
+  padding: 15px;
+  border-bottom: 1px solid black;
+}
+
+.name{
+  color: #0090c5;
+}
+
+.form-container-uno div ul ul li {
+  list-style-type: none; /* Elimina las viñetas */
+  padding-left: 0; /* Elimina el margen izquierdo adicional */
+}
+
+.form-container-uno div ul{
+  list-style-type: none; /* Elimina las viñetas */
+  padding-left: 0; /* Elimina el margen izquierdo adicional */
+}
+
+#nav ul li a{
+  color: #007BFF; /* Cambia el color del texto del enlace */
+  text-decoration: none; /* Elimina el subrayado */
+  font-weight: bold; /* Hace el texto en negrita */
+  padding: 0.5em 1em; /* Añade relleno alrededor del texto */
+  border-radius: 6px; /* Añade bordes redondeados */
+  transition: background-color 0.25s ease-in-out; /* Añade una transición suave al color de fondo */
+}
+
+#nav ul li  a:hover {
+  background-color: #353232; /* Cambia el color de fondo al pasar el ratón */
+}
+
+.viñeta {
+  list-style-type: none; /* Elimina las viñetas */
+  padding-left: 0; /* Elimina el margen izquierdo adicional */
+}
+
+#copyright li {
+  list-style-type: none; /* Elimina las viñetas */
+  padding-left: 0; /* Elimina el margen izquierdo adicional */
+}
+/* Estilos para el contenedor del formulario */
+.form-container {
+  width: 30%;
+  
+  /* Ajusta el ancho del contenedor según sea necesario */
+  margin: 0 auto;
+  /* Centra el contenedor horizontalmente */
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  /* Sombra ligera */
+  background-color: #f9f9f9;
+}
+
+/* Estilos para el formulario dentro del contenedor */
+.form-container form {
+  width: 100%;
+}
+
+/* Estilos para los elementos del formulario */
+.form-container form p {
+  margin-bottom: 15px;
+}
+
+.form-container form input[type="submit"] {
+  background-color: #0090c5;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Aplica estilos a las opciones dentro de un select */
+select option {
+  background-color: #f0f0f0;
+  /* Color de fondo */
+  color: #0e0d0d;
+  /* Color del texto */
+}
+
+/* Estilo específico para la opción seleccionada */
+select option:checked {
+  background-color: #f0f0f0;
+  /* Color de fondo cuando está seleccionada */
+  color: white;
+  /* Color del texto cuando está seleccionada */
+}
+
+/* Estilos para otro contenedor del formulario */
+.form-container-uno {
+  max-width: 500px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  background-color: #f9f9f9;
+}
+
+.form-container-uno p {
+  margin-bottom: 15px;
+}
+
+.form-container-uno label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-container-uno input[type="email"],
+.form-container-uno input[type="text"],
+.form-container-uno input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+.form-container-uno input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.form-container-uno .helptext {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.9em;
+}
+
+.form-container-uno .secondaryAction {
+  display: block;
+  margin-bottom: 10px;
+  color: #007bff;
+  text-decoration: none;
+}
+
+.form-container-uno .primaryAction {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.form-container-uno .primaryAction:hover {
+  background-color: #0056b3;
+}
+
+.form-container-uno .primaryAction:active {
+  background-color: #004085;
+}
+
+.form-container button[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s ease;
+}
+
+.form-container button[type="submit"]:hover {
+  background-color: #0056b3;
+}

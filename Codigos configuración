@@ -1,0 +1,80 @@
+# Cambiar el usuario de las rutas segun el pc linux e instalar 
+
+sudo apt install nginx
+sudo systemctl status nginx
+
+# Comandos
+
+python manage.py collectstatic
+gunicorn --bind 0.0.0.0:8000 proyectoUno.wsgi
+sudo systemctl start proyecto01
+sudo systemctl enable proyecto01
+sudo systemctl stop proyecto01
+sudo service nginx start
+sudo service nginx stop
+sudo service nginx restart
+sudo service nginx status
+
+# sudo nano /etc/nginx/nginx.conf
+
+user root;
+worker_processes auto;
+pid /run/nginx.pid;
+include /etc/nginx/modules-enabled/*.conf;
+
+events {
+        worker_connections 768;
+        # multi_accept on;
+}
+
+http {
+
+        ##
+        # Basic Settings
+        ##
+
+        sendfile on;
+        tcp_nopush on;
+        types_hash_max_size 2048;
+        # server_tokens off;
+
+# sudo nano /etc/systemd/system/proyecto01.service
+
+Unit]
+# metadatos necesarios
+Description=gunicorn daemon
+After=network.target
+
+[Service]
+# usuario del sistema operativo que ejecutará el proceso
+User=coder
+# el grupo del sistema operativo que permite la comunicación a desde el servido>
+Group=www-data
+
+# a través de la variable WorkingDirectory se indica la dirección absoluta del >
+WorkingDirectory=/home/coder/Documentos/django-produccion-01/ejemplos/ejemplo2/pr>
+
+# En Environment se indica el path de python
+# Ejemplo 1: /usr/bin/python3.9
+# Ejemplo 2: (Opcional, con el uso de entornos virtuales) /home/usuario/entorno>
+Environment="PATH=/home/coder/Documentos/django-produccion-01/entornoweb/bin"
+
+# Detallar el comando para iniciar el servicio
+
+sudo nano /etc/nginx/sites-available/proyecto01
+
+server {
+    listen 81;
+    server_name localhost;
+    
+    location / {
+        include proxy_params;
+        proxy_pass http://unix:/home/coder/Documentos/django-produccion-01/ejemplos/ejemplo2/proyectoUno/application.sock;
+    }
+
+    
+    location /static/ {
+        root /home/coder/Documentos/django-produccion-01/ejemplos/ejemplo2/proyectoUno/static;
+    }
+
+}
